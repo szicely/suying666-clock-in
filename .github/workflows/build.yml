@@ -30,10 +30,10 @@ jobs:
 
       - name: 4. update github repository...
         run: |
-          git config --global user.email "$EMAIL"
+          git config --global user.email "$EMAIL1"
           git config --global user.name "bot"
           git add .
           git commit -m "auto-update"
           git push -f
         env:
-          EMAIL: ${{ secrets.EMAIL }}
+          EMAIL: ${{ secrets.EMAIL1 }}
