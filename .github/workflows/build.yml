@@ -28,24 +28,12 @@ jobs:
           PASSWD: ${{ secrets.PASSWD }}
           KEY: ${{ secrets.KEY }}
 
-      # - name: 4. update github repository...
-      # run: |
-      # git config --global user.email "$EMAIL1"
-      # git config --global user.name "bot"
-      # git add .
-      # git commit -m "auto-update"
-      # git push -f
-      # env:
-      # EMAIL: ${{ secrets.EMAIL1 }}
-
-      - name: 4. commit...
+      - name: 4. update github repository...
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git commit -a -m "auto-checkin"
-
-      - name: 5. push changes to repository...
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+         git config --global user.email "$EMAIL1"
+         git config --global user.name "bot"
+         git add .
+         git commit -m "auto-update"
+         git push -f
+        env:
+          EMAIL1: ${{ secrets.EMAIL1 }}     
